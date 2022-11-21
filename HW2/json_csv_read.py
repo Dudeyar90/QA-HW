@@ -1,10 +1,11 @@
 import json
 import pandas as pd
 
+
 from files import CSV_FILE_PATH, JSON_FILE_PATH 
 
 
-with(JSON_FILE_PATH, "r") as f:
+with open(JSON_FILE_PATH, "r") as f:
     user_dict = json.load(f)
 
 #Парсим csv, убираем лишнюю колонку (drop) превращаем DataFrame в dict(records - формат словаря)
@@ -29,5 +30,5 @@ while i < len(user_dict):
     j = j+1 if j < len(user_dict)-1 else 0
     i += 1
 # Сохряняем результаты в  result.json и приводим к формату 4 (indent=4)
-with open("result.json","w") as f:
+with open(r"HW2\result.json","w") as f:
     json.dump(user_dict, f, indent=4)
