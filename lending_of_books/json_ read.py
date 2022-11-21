@@ -1,8 +1,7 @@
 import json
 import pandas as pd
+
 from files import CSV_FILE_PATH, JSON_FILE_PATH 
-
-
 
 
 with(JSON_FILE_PATH, "r") as f:
@@ -31,4 +30,4 @@ while i < len(user_dict):
     i += 1
 # Сохряняем результаты в  result.json и приводим к формату 4 (indent=4)
 with open("result.json","w") as f:
-    json.dump(user_dict, f,indent=4)
+    json.dump(user_dict, f, indent=4)
